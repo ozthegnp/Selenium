@@ -6,3 +6,4 @@ bin/module-info.class
 .DS_Store
 .classpath
 src/module-info.java
+/bin
