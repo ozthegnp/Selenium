@@ -1,0 +1,8 @@
+
+.metadata/version.ini
+.project
+.settings/org.eclipse.jdt.core.prefs
+bin/module-info.class
+.DS_Store
+.classpath
+src/module-info.java
