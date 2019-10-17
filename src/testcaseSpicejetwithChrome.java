@@ -2,6 +2,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+
 
 public class testcaseSpicejetwithChrome {
 	
@@ -11,6 +13,15 @@ public class testcaseSpicejetwithChrome {
 		WebDriver driver = new ChromeDriver();
 
 		driver.get("https://spicejet.com");
+		Assert.assertFalse(driver.findElement(By.cssSelector("input[id *= 'friendsandfamily']")).isSelected());
+		
+		driver.findElement(By.cssSelector("input[id *= 'friendsandfamily']")).click();	
+		
+		Assert.assertTrue(driver.findElement(By.cssSelector("input[id *= 'friendsandfamily']")).isSelected());
+
+		int num_of_checkboxes = driver.findElements(By.cssSelector("input[type = 'checkbox']")).size();
+		System.out.println(num_of_checkboxes);
+		Assert.assertEquals(num_of_checkboxes, 6);
 		
 		//Instantiating object for drop down for currency
 		Select currency_select = new Select(driver.findElement(By.cssSelector("#ctl00_mainContent_DropDownListCurrency")));		
@@ -39,13 +50,7 @@ public class testcaseSpicejetwithChrome {
 		Thread.sleep(2000L);//Sleep time to enable clinking on submit button
 		//Submit the search
 		driver.findElement(By.cssSelector("[name = 'ctl00$mainContent$btn_FindFlights']")).click();
-		
-
-		
-
-	
-		
-		//driver.quit();
+		driver.quit();
 		
 		
 		
