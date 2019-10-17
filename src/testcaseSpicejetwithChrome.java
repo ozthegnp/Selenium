@@ -14,6 +14,21 @@ public class testcaseSpicejetwithChrome {
 
 		driver.get("https://spicejet.com");
 		
+		//click on roundtrip option
+		
+		driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
+		if (driver.findElement(By.id("Div1")).getAttribute("style").contains("opacity: 1")) {
+			System.out.println("It is enabled");
+			Assert.assertTrue(true);
+			
+		} else {
+			Assert.assertTrue(false);
+
+		}
+		System.out.println(driver.findElement(By.cssSelector("input#ctl00_mainContent_view_date2")).isEnabled());
+		
+		
+		
 		//check if checkbox is unselected
 		Assert.assertFalse(driver.findElement(By.cssSelector("input[id *= 'friendsandfamily']")).isSelected());
 		
@@ -50,8 +65,8 @@ public class testcaseSpicejetwithChrome {
 		driver.findElement(By.cssSelector("a[value = 'BLR']")).click();		
 		//Selecting Arrival City
 		driver.findElement(By.xpath("//a[@value = 'MAA']")).click();
-		//Selecting Random Date
-		driver.findElement(By.xpath("//div[@class='ui-datepicker-group ui-datepicker-group-first']//a[@class='ui-state-default'][contains(text(),'21')]")).click();
+		//Selecting Date as Today
+		driver.findElement(By.cssSelector("a[class *= 'ui-state-active']")).click();
 		
 		Thread.sleep(2000L);//Sleep time to enable clinking on submit button
 		//Submit the search
