@@ -5,8 +5,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
 public class qaclickacademyAssignment1 {
+	
+	static String my_name = "Oscar";
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
+		
 		System.setProperty("webdriver.chrome.driver", "//Users//Oz//Documents//Selenium//drivers//chromedriver");
 		WebDriver driver = new ChromeDriver();
 
@@ -22,6 +25,22 @@ public class qaclickacademyAssignment1 {
 		
 		int num_of_checkboxes = driver.findElements(By.cssSelector("input[type = 'checkbox']")).size();
 		System.out.println(num_of_checkboxes);
+		
+		driver.findElement(By.id("name")).sendKeys(my_name);
+		driver.findElement(By.id("alertbtn")).click();
+		driver.switchTo().alert().accept();	
+
+		driver.findElement(By.id("name")).sendKeys(my_name);
+		driver.findElement(By.id("confirmbtn")).click();
+		
+		System.out.println(driver.switchTo().alert().getText());
+		driver.switchTo().alert().dismiss();
+		
+		Thread.sleep(4000L);
+		driver.quit();
+		
+
+		
 	}
 
 }
