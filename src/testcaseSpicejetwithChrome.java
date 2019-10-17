@@ -13,14 +13,20 @@ public class testcaseSpicejetwithChrome {
 		WebDriver driver = new ChromeDriver();
 
 		driver.get("https://spicejet.com");
+		
+		//check if checkbox is unselected
 		Assert.assertFalse(driver.findElement(By.cssSelector("input[id *= 'friendsandfamily']")).isSelected());
 		
+		//check the checkbox of friends and family
 		driver.findElement(By.cssSelector("input[id *= 'friendsandfamily']")).click();	
 		
+		//check if selection was successful 
 		Assert.assertTrue(driver.findElement(By.cssSelector("input[id *= 'friendsandfamily']")).isSelected());
-
+		
+		//count number of checbox on page
 		int num_of_checkboxes = driver.findElements(By.cssSelector("input[type = 'checkbox']")).size();
-		System.out.println(num_of_checkboxes);
+		
+		//check if it is equal with 6
 		Assert.assertEquals(num_of_checkboxes, 6);
 		
 		//Instantiating object for drop down for currency
