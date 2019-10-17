@@ -31,9 +31,13 @@ public class testcaseSpicejetwithChrome {
 		//Selecting Departure City		
 		driver.findElement(By.cssSelector("input#ctl00_mainContent_ddl_originStation1_CTXT")).click();
 		driver.findElement(By.cssSelector("a[value = 'BLR']")).click();		
+		//Selecting Arrival City
 		driver.findElement(By.xpath("//a[@value = 'MAA']")).click();
+		//Selecting Random Date
 		driver.findElement(By.xpath("//div[@class='ui-datepicker-group ui-datepicker-group-first']//a[@class='ui-state-default'][contains(text(),'21')]")).click();
-		Thread.sleep(2000L);
+		
+		Thread.sleep(2000L);//Sleep time to enable clinking on submit button
+		//Submit the search
 		driver.findElement(By.cssSelector("[name = 'ctl00$mainContent$btn_FindFlights']")).click();
 		
 
