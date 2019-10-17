@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-public class qaclickacademyAssignment1 {
+public class Assignment1QaclickAcademy {
 	
 	static String my_name = "Oscar";
 
@@ -37,7 +37,7 @@ public class qaclickacademyAssignment1 {
 		driver.switchTo().alert().dismiss();
 		
 		Thread.sleep(4000L);
-		driver.quit();
+		driver.quit(); 
 		
 
 		
