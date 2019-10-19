@@ -4,16 +4,14 @@ import java.util.Iterator;
 import java.util.Set;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class actionsWindowHandleGoogle {
+public class Assignment4WindowHandles {
 
 	public static void main(String[] args) {
-
 		System.setProperty("webdriver.chrome.driver", "//Users//Oz//Documents//Selenium//drivers//chromedriver");
 		WebDriver driver = new ChromeDriver();
 
@@ -44,6 +42,7 @@ public class actionsWindowHandleGoogle {
 		// switching back to parent window
 		driver.switchTo().window(parentId);
 		System.out.println("Switching to :" + driver.getTitle());
+
 	}
 
 }
