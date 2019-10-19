@@ -5,9 +5,7 @@ import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 
 public class Assignment4WindowHandles {
 
@@ -15,15 +13,14 @@ public class Assignment4WindowHandles {
 		System.setProperty("webdriver.chrome.driver", "//Users//Oz//Documents//Selenium//drivers//chromedriver");
 		WebDriver driver = new ChromeDriver();
 
-		// Navigating to desired website
-		driver.get("http://accounts.google.com/signup");
+		// navigating to desired website
+		driver.get("https://the-internet.herokuapp.com/");
 
-		Actions chromeActions = new Actions(driver);
+		// clicking to open Multiple Windows site
+		driver.findElement(By.xpath("//a[contains(text(), 'Multiple Windows')]")).click();
 
-		WebElement helpGoogleElement = driver.findElement(By.cssSelector(".RwBngc a"));
-
-		helpGoogleElement.click();
-		System.out.println("Current window: " + driver.getTitle());
+		// triggering to create an addition window
+		driver.findElement(By.xpath("//a[contains(text(), 'Click')]")).click();
 
 		// creating window title set
 		Set<String> windowTitles = driver.getWindowHandles();
@@ -31,18 +28,17 @@ public class Assignment4WindowHandles {
 		// using iterator to search between windows
 		Iterator<String> iterator = windowTitles.iterator();
 
-		// assigning value to windows
+		// assigning value of windows by iterating
 		String parentId = iterator.next();
 		String childId = iterator.next();
 
 		// switching to child window
 		driver.switchTo().window(childId);
-		System.out.println("Switching to :" + driver.getTitle());
-		
+		System.out.println("The child window is: " + driver.getTitle());
+
 		// switching back to parent window
 		driver.switchTo().window(parentId);
-		System.out.println("Switching to :" + driver.getTitle());
-
+		System.out.println("Switching back to parent window: " + driver.getTitle());
 	}
 
 }
