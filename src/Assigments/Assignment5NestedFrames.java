@@ -1,4 +1,4 @@
-package actions;
+package Assigments;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
