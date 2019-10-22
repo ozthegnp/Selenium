@@ -24,9 +24,7 @@ public class testCaseTableSortingGreenKart {
 		driver.findElement(By.cssSelector("tr th:nth-child(2)")).click();
 		//driver.findElement(By.cssSelector("tr th:nth-child(2)")).click();
 
-
 		List<WebElement> fruits = driver.findElements(By.cssSelector("tr td:nth-child(2)"));
-		
 
 		ArrayList<String> fruitsOriginal = new ArrayList<>();
 
