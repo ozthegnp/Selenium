@@ -7,3 +7,7 @@ bin/module-info.class
 .classpath
 src/module-info.java
 /bin
+*.prefs
+Introduction/bin/actions/actionsDemo.class
+/testNGTutorial/bin
+/Introduction/bin
