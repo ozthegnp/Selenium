@@ -8,18 +8,21 @@ public class TestClass3 {
 	
 	@AfterMethod
 	public void afterMethod() {
+		System.out.print("TestClass3: ");
 		System.out.println("will execute After every Mehtod in class");
 	}
 	
 	@Test
 	public void WebLogin() {
 		// Selenium code
+		System.out.print("TestClass3: ");
 		System.out.println("WebLogin");
 	}
 	
 	@Test(dependsOnMethods={"LogInAPICarLoan", "WebLogin"}, enabled = false, timeOut = 1)
 	public void MobileLoginCarLoan() {
 		// Appium
+		System.out.print("TestClass3: ");
 		System.out.println("MobileLoginCarLoan");
 
 	}
@@ -27,12 +30,14 @@ public class TestClass3 {
 	@Test
 	public void LogInAPICarLoan() {
 		// Rest API automation
+		System.out.print("TestClass3: ");
 		System.out.println("LogInAPICarLoan");
 
 	}
 	
 	@BeforeMethod
 	public void beforeMethod() {
+		System.out.print("TestClass3: ");
 		System.out.println("will execute Before every Mehtod in class");
 	}
 	

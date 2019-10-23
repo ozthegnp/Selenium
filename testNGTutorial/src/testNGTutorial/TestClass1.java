@@ -1,6 +1,7 @@
 package testNGTutorial;
 
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class TestClass1 {
@@ -10,17 +11,24 @@ public class TestClass1 {
 		System.out.println("I will execute last");
 	}
 	
+	@Parameters({"URL", "APIKey/username"})
 	@Test
-	public void TC() {
+	public void TC(String urlname, String username) {
 		
-		System.out.println("Hello");
+		System.out.print("TestClass1: ");
+		System.out.println(urlname + " " + username);
 		
 	}
 	
 	@Test
 	public void TC2() {
+		System.out.print("TestClass1: ");
 		System.out.println("Bye");
 
+	}
+	@DataProvider
+	public void getDate() {
+		
 	}
 
 }
