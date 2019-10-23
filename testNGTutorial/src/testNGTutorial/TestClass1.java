@@ -2,6 +2,7 @@ package testNGTutorial;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -14,21 +15,22 @@ public class TestClass1 {
 	
 	@Parameters({"URL", "APIKey/username"})
 	@Test
-	public void TC(String urlname, String username) {
+	public void TC1(@Optional("default_url") String urlname, @Optional("default_username") String username) {
 		
 		System.out.print("TestClass1: ");
 		System.out.println(urlname + " " + username);
 		
 	}
 	
-	@Test
-	public void TC2() {
+	@Test(dataProvider = "getData")
+	public void TC2(String username, String password) {
 		System.out.print("TestClass1: ");
-		System.out.println("Bye");
+		System.out.println(username + " " + password);
 
 	}
+	
 	@DataProvider
-	public Object getDate() {
+	public Object getData() {
 		// Defining object for 3 users and 2 attributes
 		Object[][] data = new Object[3][2];
 		int usernameIndex = 0;
