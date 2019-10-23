@@ -1,6 +1,7 @@
 package testNGTutorial;
 
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -27,7 +28,22 @@ public class TestClass1 {
 
 	}
 	@DataProvider
-	public void getDate() {
+	public Object getDate() {
+		// Defining object for 3 users and 2 attributes
+		Object[][] data = new Object[3][2];
+		int usernameIndex = 0;
+		int passwordIndex = 1;		
+		
+		data[0][usernameIndex] = "Anna";
+		data[0][passwordIndex] = "A1234";
+		
+		data[1][usernameIndex] = "Bobby";
+		data[1][passwordIndex] = "B1234";
+		
+		data[2][usernameIndex] = "Charlie";
+		data[2][passwordIndex] = "C1234";
+		
+		return data;
 		
 	}
 
