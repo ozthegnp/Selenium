@@ -20,14 +20,15 @@ public class Listeners implements ITestListener {
 		
 		//screenshot code 
 		//response if API failed
-		System.out.println("Listener has detected a passed TC");
 		ITestListener.super.onTestSuccess(result);
+		//System.out.println("Listener has detected a PASSED TC");
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
 		ITestListener.super.onTestFailure(result);
+		System.out.println("Listener has detected a FAILED TC '" + result.getTestClass() + "'");
 	}
 
 	@Override

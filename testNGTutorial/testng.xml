@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="LoanDepartment">
+<suite name="LoanDepartment" parallel="tests" thread-count="1">
 	<listeners>
-		<listener class-name = "testNGTutorial.Listeners">
-			
+		<listener class-name="testNGTutorial.Listeners">
+
 		</listener>
 	</listeners>
-	<parameter name = "URL" value = "google.com"/>
-	<parameter name = "APIKey/username" value = "123456"/>
-	
+	<parameter name="URL" value="google.com" />
+	<parameter name="APIKey/username" value="123456" />
+
 	<test thread-count="5" name="PersonalLoan">
 		<classes>
 			<class name="testNGTutorial.TestClass2">
@@ -25,15 +25,9 @@
 	</test> <!-- Test -->
 
 	<test thread-count="5" name="HomeLoan">
-		<parameter name = "URL" value = "--------HomeLoan.com"/>
+		<parameter name="URL" value="--------HomeLoan.com" />
 		<classes>
-			<class name="testNGTutorial.TestClass1">
-				<methods>
-					<include name="TC2" />
-					<include name="TC" />
-				</methods>
-			</class>
-
+			<class name="testNGTutorial.TestClass1" />
 			<class name="testNGTutorial.TestClass4" />
 		</classes>
 	</test> <!-- Test -->

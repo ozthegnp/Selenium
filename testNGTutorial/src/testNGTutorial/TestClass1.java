@@ -1,5 +1,6 @@
 package testNGTutorial;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
@@ -27,6 +28,13 @@ public class TestClass1 {
 		System.out.print("TestClass1: ");
 		System.out.println(username + " " + password);
 
+	}
+	
+	@Test
+	public void failure() {
+		System.out.print("TestClass1: ");
+		System.out.println("I will always fail");
+		Assert.assertTrue(false);
 	}
 	
 	@DataProvider
