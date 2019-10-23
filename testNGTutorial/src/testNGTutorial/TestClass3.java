@@ -17,7 +17,7 @@ public class TestClass3 {
 		System.out.println("WebLogin");
 	}
 	
-	@Test
+	@Test(dependsOnMethods={"LogInAPICarLoan", "WebLogin"}, enabled = false, timeOut = 1)
 	public void MobileLoginCarLoan() {
 		// Appium
 		System.out.println("MobileLoginCarLoan");
