@@ -6,11 +6,13 @@ public class AppiumTest {
 	
 	@Test
 	public void NativeAppAdroid() {
-		
+		System.out.println("NativeAppAdroid");
 	}
 	
 	@Test
 	public void IOSApps() {
+		System.out.println("IOSApps");
+
 		
 	}
 
