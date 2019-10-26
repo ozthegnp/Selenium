@@ -1,3 +1,4 @@
+import java.awt.Window.Type;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -5,7 +6,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.util.NumberToTextConverter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -57,7 +60,15 @@ public class dataDriven {
 					if (value.getCell(colIndex).getStringCellValue().equalsIgnoreCase(testCaseName)) {
 						Iterator<Cell> cv = value.cellIterator();
 						while(cv.hasNext()) {
-							cellArray.add(cv.next().getStringCellValue());							
+							Cell c = cv.next();
+							
+							if(cv.next().getStringCellValue().getClass().equals(Type.class) ) {
+								cellArray.add(cv.next().getStringCellValue());								
+							} else {
+								 cellArray.add(NumberToTextConverter.toText(cv.next().getNumericCellValue()));
+							}
+								
+														
 						}
 						break;
 					}
