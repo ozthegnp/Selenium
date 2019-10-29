@@ -11,8 +11,10 @@ src/module-info.java
 Introduction/bin/actions/actionsDemo.class
 /testNGTutorial/bin
 /Introduction/bin
-/testNGTutorial/test-output
-/MavenJava/test-output
+
+test-output/
+
+
 
 ExcelDriven/~$Book1.xlsx
 ExcelDriven/~$demoData.xlsx
