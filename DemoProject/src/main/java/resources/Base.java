@@ -13,10 +13,11 @@ import org.openqa.selenium.safari.SafariDriver;
 public class Base {
 	
 	public WebDriver driver;
+	public Properties prop;
 
 	public WebDriver initDriver() throws IOException {
 
-		Properties prop = new Properties();
+		prop = new Properties();
 		FileInputStream fis = new FileInputStream("//Users//Oz//Documents//Selenium//SeleniumRepo//DemoProject//src//main//java//resources//data.properties");
 		prop.load(fis);
 		String browserName = prop.getProperty("browser");
