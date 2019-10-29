@@ -9,7 +9,7 @@ import pageObjects.LandingPage;
 import pageObjects.LoginPage;
 import resources.Base;
 
-public class HomePage extends Base {
+public class TC1Login extends Base {
 
 	@Test(dataProvider = "getData")
 	public void basePageNavigation(String username, String password, String text) throws IOException {
