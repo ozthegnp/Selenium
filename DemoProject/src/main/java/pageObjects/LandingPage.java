@@ -18,8 +18,8 @@ public class LandingPage {
 
 
 	By signInLink = By.cssSelector("a[href*= 'sign_in']");
-	By title = By.cssSelector("div.container > h2:nth-child(1)']");
-
+	By title = By.cssSelector("div[class='text-center'] h2");
+	By navBar = By.cssSelector("ul[class = 'nav navbar-nav navbar-right']");
 
 
 	public  WebElement getLogin() {
@@ -30,6 +30,11 @@ public class LandingPage {
 	public  WebElement getTitle() {
 
 		return driver.findElement(title);
+	}
+	
+	public  WebElement getNavBar() {
+
+		return driver.findElement(navBar);
 	}
 
 
