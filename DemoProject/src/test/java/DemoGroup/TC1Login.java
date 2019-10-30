@@ -1,7 +1,12 @@
 package DemoGroup;
 
+import org.testng.annotations.Test;
 import java.io.IOException;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -11,11 +16,16 @@ import resources.Base;
 
 public class TC1Login extends Base {
 
-	@Test(dataProvider = "getData")
-	public void basePageNavigation(String username, String password, String text) throws IOException {
+	@BeforeMethod
+	public void initalize() throws IOException {
 		driver = initDriver();
 
-		driver.get("http://www.qaclickacademy.com/");
+		driver.get(prop.getProperty("url"));
+
+	}
+
+	@Test(dataProvider = "getData")
+	public void basePageNavigation(String username, String password, String text) throws IOException {
 
 		LandingPage l = new LandingPage(driver);
 		l.getLogin().click();
@@ -45,6 +55,11 @@ public class TC1Login extends Base {
 
 		return data;
 
+	}
+
+	@AfterMethod
+	public void tearDown() {
+		driver.close();
 	}
 
 }
