@@ -1,20 +1,20 @@
 package DemoGroup;
 
 import org.testng.annotations.Test;
+
+
 import java.io.IOException;
 
+import org.apache.logging.log4j.*;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
-
 import pageObjects.LandingPage;
 import pageObjects.LoginPage;
 import resources.Base;
 
 public class TC1Login extends Base {
+	private static Logger Log = LogManager.getLogger(TC1Login.class.getName());
 
 	@BeforeMethod
 	public void initalize() throws IOException {
