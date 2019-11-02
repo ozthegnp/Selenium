@@ -19,8 +19,10 @@ public class TC1Login extends Base {
 	@BeforeMethod
 	public void initalize() throws IOException {
 		driver = initDriver();
+		Log.info("Driver is initalized");
 
 		driver.get(prop.getProperty("url"));
+		Log.info("Navigated to Home Page");
 
 	}
 

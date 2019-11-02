@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
 	<Properties>
-		<Property name="basePath">./logs</Property>
+		<Property name="basePath">./logs4Log4j</Property>
 	</Properties>
 
 	<Appenders>
@@ -11,7 +11,7 @@
 				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 			<SizeBasedTriggeringPolicy size="500" />
 		</RollingFile>
-
+		
 		<Console name="Console" target="SYSTEM_OUT">
 			<PatternLayout
 				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
@@ -24,7 +24,7 @@
 		</Logger>
 
 		<Root level="trace">
-			<AppenderRef ref="Console" />
+			<AppenderRef ref="File" />
 		</Root>
 	</Loggers>
 </Configuration>

@@ -17,13 +17,17 @@ public class TC3ValidateNavBar extends Base {
 	@Test
 	public void NavBarIsDisplayed() throws IOException {
 		driver = initDriver();
+		Log.info("Driver is initalized");
 
 		driver.get(prop.getProperty("url"));
+		Log.info("Navigated to Home Page");
+
 
 		LandingPage l = new LandingPage(driver);
 
 		// compare the text from the browser with an actual value
 		AssertJUnit.assertTrue(l.getNavBar().isDisplayed());
+		Log.info("Navigaition bar is displayed");
 
 	}
 

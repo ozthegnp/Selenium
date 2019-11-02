@@ -2,3 +2,6 @@
 22:00:25.712 [main] DEBUG alphaPackage.Demo - I am debug
 22:00:25.714 [main] ERROR alphaPackage.Demo - I am error
 22:00:25.714 [main] INFO  alphaPackage.Demo - I am info
+22:18:08.226 [main] DEBUG alphaPackage.Demo - I am debug
+22:18:08.228 [main] ERROR alphaPackage.Demo - I am error
+22:18:08.228 [main] INFO  alphaPackage.Demo - I am info
